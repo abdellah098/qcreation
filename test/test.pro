@@ -1,3 +1,7 @@
 QT+=widgets
 SOURCES += \
-    main.cpp
+    main.cpp \
+    fent.cpp
+
+HEADERS += \
+    fent.h
