@@ -3,10 +3,14 @@
 #include<QApplication>
 #include<QWidget>
 #include<QPushButton>
+#include<QSlider>
+#include<QLCDNumber>
 
 class fenetre :public QWidget
-{
-    QPushButton *m_bouton;
+{private:
+    QLCDNumber  *m_lcd;
+    QSlider  *m_slider;
+
 public:
     fenetre();
     ~fenetre();

@@ -2,22 +2,19 @@
 
 fenetre::fenetre():QWidget()
 {
-    //fixation de la taille de la fenetre
     setFixedSize(300,150);
-    //initialisation du bouton ici Qpushbutton prend deux arguments un QString et un pointeur vers un QWidget
 
-    m_bouton=new QPushButton("fichier",this);
-    m_bouton->setFont(QFont("aakar",20,QFont::Black,false));
-    m_bouton->setCursor(Qt::PointingHandCursor);
-    m_bouton->setToolTip("texte d'aide");
-    m_bouton->setText("Quitter");
-    m_bouton->setIcon(QIcon("pic.png"));
+    m_lcd=new QLCDNumber(this);
+    m_lcd->setSegmentStyle(QLCDNumber::Flat);
+    m_lcd->move(100,40);
 
-    m_bouton->move(60,70);
-    //connection du signal clicked(),quit()
-QObject::connect(m_bouton,SIGNAL(clicked(bool)),qApp,SLOT(quit()));
+   m_slider=new QSlider(Qt::Horizontal, this);//pour que le curseur soit horizontal on ajout Qt::Horizontal
+  // m_slider->move(100,90);
+   m_slider->setGeometry(50,90,200,10);
+   QObject::connect(m_slider,SIGNAL(valueChanged(int)),m_lcd,SLOT(display(int)));
+
 }
 fenetre::~fenetre()
 {
-    delete m_bouton;
+    delete m_lcd,delete m_slider;
 }
