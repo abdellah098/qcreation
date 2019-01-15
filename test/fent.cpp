@@ -10,11 +10,12 @@ fenetre::fenetre():QWidget()
     m_bouton->setFont(QFont("aakar",20,QFont::Black,false));
     m_bouton->setCursor(Qt::PointingHandCursor);
     m_bouton->setToolTip("texte d'aide");
-    m_bouton->setText("mes fichiers");
+    m_bouton->setText("Quitter");
     m_bouton->setIcon(QIcon("pic.png"));
 
     m_bouton->move(60,70);
-
+    //connection du signal clicked(),quit()
+QObject::connect(m_bouton,SIGNAL(clicked(bool)),qApp,SLOT(quit()));
 }
 fenetre::~fenetre()
 {
