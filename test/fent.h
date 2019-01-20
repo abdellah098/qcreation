@@ -4,11 +4,10 @@
 #include<QWidget>
 #include<QPushButton>
 #include<QSlider>
-#include<QLCDNumber>
 
 class fenetre :public QWidget
 {private:
-    QLCDNumber  *m_lcd;
+
     QSlider  *m_slider;
 
 public:
