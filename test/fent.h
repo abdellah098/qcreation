@@ -3,22 +3,20 @@
 #include<QApplication>
 #include<QWidget>
 #include<QPushButton>
-#include<QSlider>
+#include<QMessageBox>
 
 class fenetre :public QWidget
-{  Q_OBJECT
-private:
+{
+    Q_OBJECT
+   public:
+   fenetre();
+   ~fenetre();
 
-    QSlider  *m_slider;
-    QSlider  *m_slider1;
-public slots:
-    void changerLargeur(int largeur);
-    void changerHauteur(int hauteur);
-signals:
-    void agrandissementMax();
-public:
-    fenetre();
-    ~fenetre();
+   public slots:
+   void ouvrirDialogue();
+
+   private:
+   QPushButton *m_buttonDialog;
 };
 
 #endif // FENT_H
