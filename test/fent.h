@@ -6,10 +6,14 @@
 #include<QSlider>
 
 class fenetre :public QWidget
-{private:
+{  Q_OBJECT
+private:
 
     QSlider  *m_slider;
-
+    QSlider  *m_slider1;
+public slots:
+    void changerLargeur(int largeur);
+    void changerHauteur(int hauteur);
 public:
     fenetre();
     ~fenetre();
