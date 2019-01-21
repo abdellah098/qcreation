@@ -14,6 +14,8 @@ private:
 public slots:
     void changerLargeur(int largeur);
     void changerHauteur(int hauteur);
+signals:
+    void agrandissementMax();
 public:
     fenetre();
     ~fenetre();
